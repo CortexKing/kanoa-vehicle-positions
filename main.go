@@ -62,6 +62,7 @@ func newMux(store appStore, tracker *Tracker, rateLimiter *VehicleRateLimiter, j
 	mux.HandleFunc("GET /ready", handleReadiness(store))
 
 	mux.Handle("POST /api/v1/locations", authMiddleware(handlePostLocation(store, tracker, rateLimiter)))
+	mux.Handle("POST /api/v1/integrations/saeiv/locations", requireSaeivIngestion()(handlePostLocation(store, tracker, rateLimiter)))
 	mux.Handle("POST /api/v1/trips/start", authMiddleware(handleStartTrip(store)))
 	mux.Handle("POST /api/v1/trips/end", authMiddleware(handleEndTrip(store)))
 	mux.Handle("GET /api/v1/vehicles", authMiddleware(handleListMyVehicles(store)))
