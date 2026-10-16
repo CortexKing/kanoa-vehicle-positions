@@ -1,0 +1,10 @@
+{
+  "release": "production-source/2026-10-15",
+  "component": "kanoa-vehicle-positions",
+  "provenance": "reconstructed from prepared and operator-deployed artifacts",
+  "liveFingerprintComparison": "pending",
+  "productionGpsAcceptance": "deferred",
+  "baseCommit": "08cc246f3ce01ff36e4700b8cc1130715593e65b",
+  "runtimeSourceSha256": {},
+  "notes": "This source tag is not an automatic deployment. Consult kanoa-infrastructure/releases."
+}
